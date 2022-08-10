@@ -15,25 +15,25 @@ createServer({
         {
           id: 1,
           title: 'Freela de landing page',
+          amount: 8000,
           type: 'deposit',
           category: 'Dev',
-          amount: 8000,
           createdAt: new Date('2022-04-25 10:00:00'),
         },
         {
           id: 2,
           title: 'Hamburguer',
+          amount: 50,
           type: 'withdraw',
           category: 'Food',
-          amount: 50,
           createdAt: new Date('2022-04-25 21:00:00'),
         },
         {
           id: 3,
           title: 'Aluguel',
+          amount: 1200,
           type: 'withdraw',
           category: 'Casa',
-          amount: 1200,
           createdAt: new Date('2022-04-25 08:00:00'),
         },
       ]
@@ -50,7 +50,7 @@ createServer({
     this.post('/transactions', (schema, request) =>{
       const data = JSON.parse(request.requestBody);
       
-      return schema.create('transactions', data);
+      return schema.create('transaction', data);
     })
   }
 })
